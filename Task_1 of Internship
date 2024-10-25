@@ -1,0 +1,16 @@
+##Calculate summary statistics (mean, median,mod and standard deviation) for dataset
+import pandas as pd
+
+data = pd.read_csv('E:\DOWNLOADS\gender_submission.csv')
+
+mean_survived = data['Survived'].mean()
+print("Mean of Survived column:", mean_survived)
+
+median_survived = data['Survived'].median()
+print("Median of Survived column:", median_survived)
+
+mode_survived = data['Survived'].mode()[0]  # [0] gets the first mode in case there are multiple
+print("Mode of Survived column:", mode_survived)
+
+std_dev_survived = data['Survived'].std()
+print("Standard Deviation of Survived column:", std_dev_survived)
