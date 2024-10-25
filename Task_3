@@ -1,0 +1,19 @@
+##Perform Data Cleaning on given data set
+import pandas as pd
+
+gender_data = pd.read_csv("E:\DOWNLOADS\gender_submission.csv")
+
+print("Initial data overview:")
+print(gender_data.info())
+
+print("\nMissing values in each column:")
+print(gender_data.isnull().sum())
+
+gender_data = gender_data.drop_duplicates()
+print(f"\nNumber of duplicates after cleaning: {gender_data.duplicated().sum()}")
+
+print("\nData types before conversion:")
+print(gender_data.dtypes)
+
+print("\nCleaned data preview:")
+print(gender_data.head())
